@@ -1,0 +1,98 @@
+table 'public olist_products_dataset'
+	lineageTag: b8c597bd-6b6b-409c-8483-ac0a63e4bdbb
+
+	column product_id
+		dataType: string
+		lineageTag: 12530019-965d-443b-88de-2d2a975fa5ca
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_category_name
+		dataType: string
+		lineageTag: 2b1f9fe4-518c-4573-a03c-aa60fd3d919b
+		summarizeBy: none
+		sourceColumn: product_category_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_name_lenght
+		dataType: int64
+		formatString: 0
+		lineageTag: deeed5d4-e042-4b9b-a8bc-4b0a3ffb9e55
+		summarizeBy: none
+		sourceColumn: product_name_lenght
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_description_lenght
+		dataType: int64
+		formatString: 0
+		lineageTag: 4eabe797-01d8-4ee6-9fde-d2db9e623aec
+		summarizeBy: none
+		sourceColumn: product_description_lenght
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_photos_qty
+		dataType: int64
+		formatString: 0
+		lineageTag: defd4787-f6f9-492d-bcdf-4bfad7859684
+		summarizeBy: none
+		sourceColumn: product_photos_qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_weight_g
+		dataType: int64
+		formatString: 0
+		lineageTag: 1112dab4-2695-46cd-9154-499af6b0a48f
+		summarizeBy: none
+		sourceColumn: product_weight_g
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_length_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: f4dcbcad-1633-4e83-8dcb-d5107ab5cbe3
+		summarizeBy: none
+		sourceColumn: product_length_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_height_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: 6362f412-e1ce-49ab-ae56-11339cf106ba
+		summarizeBy: none
+		sourceColumn: product_height_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_width_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: 03bccfdf-563d-434b-b361-42a40909a7d3
+		summarizeBy: none
+		sourceColumn: product_width_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public olist_products_dataset' = m
+		mode: import
+		source =
+				let
+				    Fonte = PostgreSQL.Database("localhost:5432", "olist"),
+				    public_olist_products_dataset = Fonte{[Schema="public",Item="olist_products_dataset"]}[Data],
+				    #"Valor Substituído" = Table.ReplaceValue(public_olist_products_dataset,"","Sem Categoria",Replacer.ReplaceValue,{"product_category_name"}),
+				    #"Linhas Classificadas" = Table.Sort(#"Valor Substituído",{{"product_category_name", Order.Ascending}}),
+				    #"Linhas Filtradas" = Table.SelectRows(#"Linhas Classificadas", each true)
+				in
+				    #"Linhas Filtradas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

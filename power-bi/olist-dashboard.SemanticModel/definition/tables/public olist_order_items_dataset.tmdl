@@ -1,0 +1,77 @@
+table 'public olist_order_items_dataset'
+	lineageTag: 2f30f64f-bb4c-429c-bed7-e6cbeefcb944
+
+	column order_id
+		dataType: string
+		lineageTag: b57192df-6ae1-46ab-ac6c-c72c7c57b3e8
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_item_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 89bf9b33-0cf4-4e5a-be27-d9a202ab8930
+		summarizeBy: sum
+		sourceColumn: order_item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: string
+		lineageTag: 0fb24f20-8331-4d4c-8e1c-7e26a6a87f96
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_id
+		dataType: string
+		lineageTag: 12f983b3-0763-468e-b6be-6c99e45935ea
+		summarizeBy: none
+		sourceColumn: seller_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column shipping_limit_date
+		dataType: string
+		lineageTag: 282f1013-e0e1-49a2-a056-325b23ee85c7
+		summarizeBy: none
+		sourceColumn: shipping_limit_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column price
+		dataType: double
+		lineageTag: 49b37276-fdb6-4e84-aa56-abb540c540b2
+		summarizeBy: sum
+		sourceColumn: price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column freight_value
+		dataType: double
+		lineageTag: 412ee857-5b92-4ea3-a864-72b7875c0319
+		summarizeBy: sum
+		sourceColumn: freight_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'public olist_order_items_dataset' = m
+		mode: import
+		source =
+				let
+				    Fonte = PostgreSQL.Database("localhost:5432", "olist"),
+				    public_olist_order_items_dataset = Fonte{[Schema="public",Item="olist_order_items_dataset"]}[Data]
+				in
+				    public_olist_order_items_dataset
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,14 @@
+relationship AutoDetected_2df97ee1-c564-409a-8294-3474223ea539
+	fromColumn: 'public olist_order_items_dataset'.product_id
+	toColumn: 'public olist_products_dataset'.product_id
+
+relationship AutoDetected_49d7002a-4172-4408-9750-664b3d4da123
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'public olist_orders_dataset'.customer_id
+	toColumn: 'public olist_customers_dataset'.customer_id
+
+relationship 5bd960e2-1428-2cb7-30d7-617b9a338c78
+	fromColumn: 'public olist_order_items_dataset'.order_id
+	toColumn: 'public olist_orders_dataset'.order_id
+

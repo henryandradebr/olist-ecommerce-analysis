@@ -1,0 +1,57 @@
+table 'public olist_customers_dataset'
+	lineageTag: ef157951-7453-4656-be1f-12bee91c1c51
+
+	column customer_id
+		dataType: string
+		lineageTag: b2f2a257-da9d-4896-937c-6bd13dbc4e87
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_unique_id
+		dataType: string
+		lineageTag: 87780b3d-e1b2-463f-aded-6f1b2d1ac2db
+		summarizeBy: none
+		sourceColumn: customer_unique_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column zip_code
+		dataType: int64
+		formatString: 0
+		lineageTag: 5ae3827d-a1a7-4e3f-86ee-551e86498689
+		summarizeBy: sum
+		sourceColumn: zip_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_city
+		dataType: string
+		lineageTag: 670b896d-e198-40a6-9590-f7206d0b9fed
+		summarizeBy: none
+		sourceColumn: customer_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_state
+		dataType: string
+		lineageTag: b0a52db4-104b-484a-a565-db146f57cbf0
+		summarizeBy: none
+		sourceColumn: customer_state
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public olist_customers_dataset' = m
+		mode: import
+		source =
+				let
+				    Fonte = PostgreSQL.Database("localhost:5432", "olist"),
+				    public_olist_customers_dataset = Fonte{[Schema="public",Item="olist_customers_dataset"]}[Data]
+				in
+				    public_olist_customers_dataset
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

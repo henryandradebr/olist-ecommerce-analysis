@@ -1,0 +1,80 @@
+table 'public olist_orders_dataset'
+	lineageTag: 3185c60b-dc56-41ed-9083-d73516caf462
+
+	column order_id
+		dataType: string
+		lineageTag: fafdecf8-8dd6-4847-afe7-6379621819a6
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: 712fb589-7d73-4c31-b710-c9558db575fb
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_status
+		dataType: string
+		lineageTag: 2ec4969b-56e7-461f-a398-cfede1c92c9d
+		summarizeBy: none
+		sourceColumn: order_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_purchase_timestamp
+		dataType: string
+		lineageTag: d2d739ee-99dd-48c0-92ed-493f1a4c8497
+		summarizeBy: none
+		sourceColumn: order_purchase_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_approved_at
+		dataType: string
+		lineageTag: fba56647-5fb4-438c-b531-a8bf0b222f98
+		summarizeBy: none
+		sourceColumn: order_approved_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_delivered_carrier_date
+		dataType: string
+		lineageTag: 83337fb2-f943-43a9-aed8-4cbbadbbdbeb
+		summarizeBy: none
+		sourceColumn: order_delivered_carrier_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_delivered_customer_date
+		dataType: string
+		lineageTag: d24d9fc9-7c78-47b2-a151-34a62e0000bb
+		summarizeBy: none
+		sourceColumn: order_delivered_customer_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_estimated_delivery_date
+		dataType: string
+		lineageTag: d19068f9-c6cd-4e5b-aebe-091865bd6062
+		summarizeBy: none
+		sourceColumn: order_estimated_delivery_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public olist_orders_dataset' = m
+		mode: import
+		source =
+				let
+				    Fonte = PostgreSQL.Database("localhost:5432", "olist"),
+				    public_olist_orders_dataset = Fonte{[Schema="public",Item="olist_orders_dataset"]}[Data]
+				in
+				    public_olist_orders_dataset
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

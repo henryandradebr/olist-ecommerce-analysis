@@ -1,0 +1,21 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["public olist_customers_dataset","public olist_order_items_dataset","public olist_products_dataset","public olist_orders_dataset"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'public olist_customers_dataset'
+ref table 'public olist_order_items_dataset'
+ref table 'public olist_products_dataset'
+ref table 'public olist_orders_dataset'
+
+ref cultureInfo pt-BR
+

@@ -1,0 +1,40 @@
+# =========================
+# Power BI
+# =========================
+*.pbix
+*.pbit
+*.pbix.lock
+*.pbit.lock
+*.data
+*.cache
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+**/.pbi/logs/
+
+# =========================
+# SQL / Database
+# =========================
+*.db
+*.bak
+*.backup
+*.sql~          # arquivos temporários de edição
+*.log
+
+# =========================
+# Sistema / IDE
+# =========================
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.idea/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# =========================
+# Pasta na qual os dados brutos são armazenados, não deve ser versionada
+# =========================
+/raw_data/
