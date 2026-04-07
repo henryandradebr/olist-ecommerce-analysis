@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "b2a493a479f84b967ac1",
+  "displayName": "Análise Pedidos",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "pageBinding": {
+    "name": "a21146d29d802e04d9bb",
+    "type": "Default",
+    "parameters": []
+  }
+}

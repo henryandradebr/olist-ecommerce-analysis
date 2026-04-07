@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["public olist_customers_dataset","public olist_order_items_dataset","public olist_products_dataset","public olist_orders_dataset"]
+annotation PBI_QueryOrder = ["public olist_customers_dataset","public olist_order_items_dataset","public olist_products_dataset","public olist_orders_dataset","Medidas","tabela_estado_regiao"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -16,6 +16,10 @@ ref table 'public olist_customers_dataset'
 ref table 'public olist_order_items_dataset'
 ref table 'public olist_products_dataset'
 ref table 'public olist_orders_dataset'
+ref table Medidas
+ref table DateTableTemplate_5752ad23-9a2e-4f5c-9064-9ec61c8b001e
+ref table LocalDateTable_19a18b12-987b-428c-a0b2-293e66007d55
+ref table tabela_estado_regiao
 
 ref cultureInfo pt-BR
 

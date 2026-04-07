@@ -1,0 +1,34 @@
+table tabela_estado_regiao
+	lineageTag: 0e572424-4db8-42a5-be01-d6dd62045611
+
+	column Estado
+		dataType: string
+		lineageTag: d2bb4875-2678-4b5f-aa0f-0b89bfeee4d0
+		summarizeBy: none
+		sourceColumn: Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Região
+		dataType: string
+		lineageTag: 4e59984f-8c11-46d6-a07a-833f3e79f0bc
+		summarizeBy: none
+		sourceColumn: Região
+
+		annotation SummarizationSetBy = Automatic
+
+	partition tabela_estado_regiao = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("bY9BDsIgEEXvwroegiI2GilkpjvShUmJMTGStPREHsWL2UhUGFj+l8f/g7VMLuEyedYwcNfb6+nZ2FjGxQZ6PwcX4znGyS1fYnJBZbHl1BeSkv1hI8I9wux3+kclbhTXv9bpmqaKATVUPazSjowYnp1vWtpu4PPiHkPxF3OkBE5kAvpCwaQTdHYBQBZRJCoaUo3FPUPSNr4B", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Coluna 1" = _t, #"Coluna 2" = _t]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"Coluna 1", type text}, {"Coluna 2", type text}}),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(#"Tipo Alterado", [PromoteAllScalars=true]),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Estado", type text}, {"Região", type text}})
+				in
+				    #"Tipo Alterado1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

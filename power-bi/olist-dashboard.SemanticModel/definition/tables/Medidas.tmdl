@@ -1,0 +1,31 @@
+table Medidas
+	lineageTag: 013333bf-7658-4a54-ad94-3e52e71ac453
+
+	measure Pedidos_Entegues = CALCULATE(COUNTROWS('public olist_orders_dataset'), 'public olist_orders_dataset'[order_status] = "delivered")
+		formatString: 0
+		lineageTag: d55a86a4-5933-404e-aef5-a0c82926c924
+
+	measure Pedidos_Cancelados = CALCULATE(COUNTROWS('public olist_orders_dataset'), 'public olist_orders_dataset'[order_status] = "canceled")
+		formatString: 0
+		lineageTag: c156f4b9-71ba-4ea2-bc5e-e15814600b9b
+
+	measure Total_Pedidos_Por_Categoria = CALCULATE(COUNTROWS('public olist_order_items_dataset'), 'public olist_orders_dataset'[order_status] = "delivered")
+		formatString: 0
+		lineageTag: e12e9233-a948-48b3-857e-5ffbffefb867
+
+	measure Taxa_Cancelamento = DIVIDE([Pedidos_Cancelados], [Pedidos_Entegues] + [Pedidos_Cancelados])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 6b789cdc-21d9-40b8-81d1-a1493bde7d4e
+
+	partition Medidas = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Coluna 1" = _t]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"Coluna 1", type text}}),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"Coluna 1"})
+				in
+				    #"Colunas Removidas"
+
+	annotation PBI_ResultType = Table
+

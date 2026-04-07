@@ -24,6 +24,26 @@
           }
         }
       }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "visible": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
     ]
   },
   "resourcePackages": [
@@ -35,6 +55,97 @@
           "name": "CY26SU02",
           "path": "BaseThemes/CY26SU02.json",
           "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "analise-geral-blue33162889135451823.png",
+          "path": "analise-geral-blue33162889135451823.png",
+          "type": "Image"
+        },
+        {
+          "name": "analise-geral-blue6035806435301532.png",
+          "path": "analise-geral-blue6035806435301532.png",
+          "type": "Image"
+        },
+        {
+          "name": "analise-geral-light-blue36709795050781147.png",
+          "path": "analise-geral-light-blue36709795050781147.png",
+          "type": "Image"
+        },
+        {
+          "name": "analise-geral-light-blue45382818895166455.png",
+          "path": "analise-geral-light-blue45382818895166455.png",
+          "type": "Image"
+        },
+        {
+          "name": "analise-geral-light-blue6525836071338188.png",
+          "path": "analise-geral-light-blue6525836071338188.png",
+          "type": "Image"
+        },
+        {
+          "name": "analise-kpis-blue12001618625377208.png",
+          "path": "analise-kpis-blue12001618625377208.png",
+          "type": "Image"
+        },
+        {
+          "name": "analise-kpis-blue6992403965467918.png",
+          "path": "analise-kpis-blue6992403965467918.png",
+          "type": "Image"
+        },
+        {
+          "name": "analise-kpis-light-blue754321045905797.png",
+          "path": "analise-kpis-light-blue754321045905797.png",
+          "type": "Image"
+        },
+        {
+          "name": "analise-pedidos-blue12074134760686162.png",
+          "path": "analise-pedidos-blue12074134760686162.png",
+          "type": "Image"
+        },
+        {
+          "name": "analise-pedidos-blue4352095547700596.png",
+          "path": "analise-pedidos-blue4352095547700596.png",
+          "type": "Image"
+        },
+        {
+          "name": "analise-pedidos-light-blue32561229128807656.png",
+          "path": "analise-pedidos-light-blue32561229128807656.png",
+          "type": "Image"
+        },
+        {
+          "name": "analise-pedidos-light-blue7710954037305561.png",
+          "path": "analise-pedidos-light-blue7710954037305561.png",
+          "type": "Image"
+        },
+        {
+          "name": "botao-home-para-interface4239308231945773.png",
+          "path": "botao-home-para-interface4239308231945773.png",
+          "type": "Image"
+        },
+        {
+          "name": "botao-home-para-interface8130206050098241.png",
+          "path": "botao-home-para-interface8130206050098241.png",
+          "type": "Image"
+        },
+        {
+          "name": "clientes-blue5880545505996416.png",
+          "path": "clientes-blue5880545505996416.png",
+          "type": "Image"
+        },
+        {
+          "name": "receitat-blue16615073204405661.png",
+          "path": "receitat-blue16615073204405661.png",
+          "type": "Image"
+        },
+        {
+          "name": "total-pedidos-blue2268623738111224.png",
+          "path": "total-pedidos-blue2268623738111224.png",
+          "type": "Image"
         }
       ]
     }

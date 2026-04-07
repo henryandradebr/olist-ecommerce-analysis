@@ -19,7 +19,7 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
@@ -32,7 +32,7 @@
             "height": 248,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
         },
         {
           "location": {
@@ -45,7 +45,7 @@
             "height": 296,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 3
         },
         {
           "location": {
@@ -58,7 +58,33 @@
             "height": 272,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 146.39999389648438,
+            "y": 0
+          },
+          "nodeIndex": "Medidas",
+          "nodeLineageTag": "013333bf-7658-4a54-ad94-3e52e71ac453",
+          "size": {
+            "height": 199,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 711.39999389648438,
+            "y": 331.5
+          },
+          "nodeIndex": "tabela_estado_regiao",
+          "nodeLineageTag": "0e572424-4db8-42a5-be01-d6dd62045611",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 6
         }
       ],
       "name": "Todas as tabelas",

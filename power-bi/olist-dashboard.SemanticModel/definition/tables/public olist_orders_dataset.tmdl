@@ -26,12 +26,24 @@ table 'public olist_orders_dataset'
 		annotation SummarizationSetBy = Automatic
 
 	column order_purchase_timestamp
-		dataType: string
+		dataType: dateTime
+		formatString: dd/mm/yyyy
 		lineageTag: d2d739ee-99dd-48c0-92ed-493f1a4c8497
 		summarizeBy: none
 		sourceColumn: order_purchase_timestamp
 
+		variation Variation
+			isDefault
+			relationship: c1ff480e-9453-4f01-af21-ee748284c5d7
+			defaultHierarchy: LocalDateTable_19a18b12-987b-428c-a0b2-293e66007d55.'Hierarquia de datas'
+
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column order_approved_at
 		dataType: string

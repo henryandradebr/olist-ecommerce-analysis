@@ -12,3 +12,12 @@ relationship 5bd960e2-1428-2cb7-30d7-617b9a338c78
 	fromColumn: 'public olist_order_items_dataset'.order_id
 	toColumn: 'public olist_orders_dataset'.order_id
 
+relationship c1ff480e-9453-4f01-af21-ee748284c5d7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'public olist_orders_dataset'.order_purchase_timestamp
+	toColumn: LocalDateTable_19a18b12-987b-428c-a0b2-293e66007d55.Date
+
+relationship 5a8212c1-9b7f-b5b4-58ce-f885ed342cd8
+	fromColumn: 'public olist_customers_dataset'.customer_state
+	toColumn: tabela_estado_regiao.Estado
+

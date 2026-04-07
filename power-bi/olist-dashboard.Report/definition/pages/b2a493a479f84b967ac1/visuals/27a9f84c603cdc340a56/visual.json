@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "27a9f84c603cdc340a56",
+  "position": {
+    "x": 322.375296912114,
+    "y": 386.50831353919239,
+    "z": 10000,
+    "height": 333.49168646080756,
+    "width": 558.38479809976241,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "public olist_products_dataset"
+                    }
+                  },
+                  "Property": "product_category_name"
+                }
+              },
+              "queryRef": "public olist_products_dataset.product_category_name",
+              "nativeQueryRef": "product_category_name",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Total_Pedidos_Por_Categoria"
+                }
+              },
+              "queryRef": "Medidas.Total_Pedidos_Por_Categoria",
+              "nativeQueryRef": "Total_Pedidos_Por_Categoria"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Medidas"
+                  }
+                },
+                "Property": "Total_Pedidos_Por_Categoria"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
