@@ -10,8 +10,8 @@
       "nodes": [
         {
           "location": {
-            "x": 289,
-            "y": 310.75
+            "x": 573,
+            "y": 517.75
           },
           "nodeIndex": "public olist_customers_dataset",
           "nodeLineageTag": "ef157951-7453-4656-be1f-12bee91c1c51",
@@ -23,8 +23,8 @@
         },
         {
           "location": {
-            "x": 932,
-            "y": 13.75
+            "x": 981,
+            "y": 94.75
           },
           "nodeIndex": "public olist_order_items_dataset",
           "nodeLineageTag": "2f30f64f-bb4c-429c-bed7-e6cbeefcb944",
@@ -36,8 +36,8 @@
         },
         {
           "location": {
-            "x": 1311.3999938964844,
-            "y": 309
+            "x": 1344.3999938964844,
+            "y": 314
           },
           "nodeIndex": "public olist_products_dataset",
           "nodeLineageTag": "b8c597bd-6b6b-409c-8483-ac0a63e4bdbb",
@@ -49,7 +49,7 @@
         },
         {
           "location": {
-            "x": 462,
+            "x": 619,
             "y": 0
           },
           "nodeIndex": "public olist_orders_dataset",
@@ -62,7 +62,7 @@
         },
         {
           "location": {
-            "x": 146.39999389648438,
+            "x": 0,
             "y": 0
           },
           "nodeIndex": "Medidas",
@@ -75,8 +75,8 @@
         },
         {
           "location": {
-            "x": 711.39999389648438,
-            "y": 331.5
+            "x": 908.39999389648438,
+            "y": 619.5
           },
           "nodeIndex": "tabela_estado_regiao",
           "nodeLineageTag": "0e572424-4db8-42a5-be01-d6dd62045611",
@@ -85,6 +85,19 @@
             "width": 234
           },
           "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 288,
+            "y": 147.5
+          },
+          "nodeIndex": "olist_order_payments_dataset",
+          "nodeLineageTag": "7432f21a-1fa7-4ccb-be4e-c6b91d139d6d",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Todas as tabelas",

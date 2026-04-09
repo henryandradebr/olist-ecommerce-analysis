@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "d2323b92b3d22efd9047",
+  "name": "0c55bd151e509d38de22",
   "position": {
     "x": 936.34204275534432,
-    "y": 230.02375296912112,
-    "z": 22000,
-    "height": 230.02375296912112,
+    "y": 469.45368171021374,
+    "z": 23002,
+    "height": 236.86460807600949,
     "width": 324.08551068883611,
-    "tabOrder": 21000
+    "tabOrder": 22002
   },
   "visual": {
-    "visualType": "pieChart",
+    "visualType": "donutChart",
     "query": {
       "queryState": {
         "Category": {
@@ -41,17 +41,17 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "public olist_order_items_dataset"
+                          "Entity": "olist_order_payments_dataset"
                         }
                       },
-                      "Property": "price"
+                      "Property": "payment_value"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(public olist_order_items_dataset.price)",
-              "nativeQueryRef": "Soma de price"
+              "queryRef": "Sum(olist_order_payments_dataset.payment_value)",
+              "nativeQueryRef": "Soma de payment_value"
             }
           ]
         }
@@ -65,10 +65,10 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "public olist_order_items_dataset"
+                        "Entity": "olist_order_payments_dataset"
                       }
                     },
-                    "Property": "price"
+                    "Property": "payment_value"
                   }
                 },
                 "Function": 0
@@ -95,17 +95,6 @@
         }
       ],
       "dataPoint": [
-        {
-          "properties": {
-            "borderShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        },
         {
           "properties": {
             "fill": {
@@ -314,6 +303,17 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "borderShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
         }
       ],
       "labels": [
@@ -325,6 +325,34 @@
                   "Value": "true"
                 }
               }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'outside'"
+                }
+              }
+            },
+            "overflow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Percent of total'"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
             }
           }
         }
@@ -334,10 +362,10 @@
       "title": [
         {
           "properties": {
-            "text": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'Receita Pedidos X Região'"
+                  "Value": "true"
                 }
               }
             },
@@ -345,13 +373,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'center'"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Verdana'"
                 }
               }
             },
@@ -368,11 +389,25 @@
                   "Value": "false"
                 }
               }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Verdana'"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Receita Frete X Região'"
+                }
+              }
             }
           }
         }
       ],
-      "dropShadow": [
+      "background": [
         {
           "properties": {
             "show": {
@@ -382,22 +417,10 @@
                 }
               }
             },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0.6
-                    }
-                  }
-                }
-              }
-            },
-            "preset": {
+            "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "'Center'"
+                  "Value": "0D"
                 }
               }
             }
@@ -423,6 +446,51 @@
             }
           }
         }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "preset": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -430,7 +498,26 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "b5c34485c604549fc52d",
+        "name": "7256a7ab7f7822af00df",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "olist_order_payments_dataset"
+                  }
+                },
+                "Property": "payment_value"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "17f9393c53fb54c5f350",
         "field": {
           "Column": {
             "Expression": {
@@ -442,25 +529,6 @@
           }
         },
         "type": "Categorical"
-      },
-      {
-        "name": "403b49f7cf2a282a9249",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "public olist_order_items_dataset"
-                  }
-                },
-                "Property": "price"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

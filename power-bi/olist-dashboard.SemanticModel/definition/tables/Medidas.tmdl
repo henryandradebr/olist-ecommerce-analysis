@@ -17,6 +17,27 @@ table Medidas
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 6b789cdc-21d9-40b8-81d1-a1493bde7d4e
 
+	measure Ticket_Medio = ```
+			DIVIDE([Receita_Entregue_Com_Frete], [Pedidos_Entegues])  
+			```
+		lineageTag: ace45c7e-91d7-4b61-9648-731377d0c17a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Receita_Entregue_Com_Frete =
+			
+			CALCULATE(
+			    SUM('olist_order_payments_dataset'[payment_value]),
+			    'public olist_orders_dataset'[order_status] = "delivered"
+			)
+		formatString: 0
+		lineageTag: df457cf1-7a35-4c4d-a84d-8eb257b462fd
+
+	measure Receita_Entregues = CALCULATE(SUM('public olist_order_items_dataset'[price]))
+		lineageTag: 8c60ada0-4826-4827-aa7e-2d196bc18f1b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition Medidas = m
 		mode: import
 		source =

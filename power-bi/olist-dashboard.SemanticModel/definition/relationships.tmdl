@@ -21,3 +21,7 @@ relationship 5a8212c1-9b7f-b5b4-58ce-f885ed342cd8
 	fromColumn: 'public olist_customers_dataset'.customer_state
 	toColumn: tabela_estado_regiao.Estado
 
+relationship AutoDetected_7892e105-0cb5-47fd-98aa-5ba1b259ec51
+	fromColumn: olist_order_payments_dataset.order_id
+	toColumn: 'public olist_orders_dataset'.order_id
+

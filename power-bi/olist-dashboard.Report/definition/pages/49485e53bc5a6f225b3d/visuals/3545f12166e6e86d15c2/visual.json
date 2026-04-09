@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "3545f12166e6e86d15c2",
   "position": {
-    "x": 582.5,
-    "y": 469.16666666666669,
+    "x": 592.58907363420428,
+    "y": 470.30878859857478,
     "z": 21000,
-    "height": 236.66666666666669,
-    "width": 323.33333333333337,
+    "height": 236.00950118764845,
+    "width": 323.230403800475,
     "tabOrder": 20000
   },
   "visual": {
@@ -292,5 +292,42 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e10fbda5f7cbbe082acc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "public olist_products_dataset"
+              }
+            },
+            "Property": "product_category_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "672f47de48c3e49ac7b8",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "public olist_order_items_dataset"
+                  }
+                },
+                "Property": "price"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

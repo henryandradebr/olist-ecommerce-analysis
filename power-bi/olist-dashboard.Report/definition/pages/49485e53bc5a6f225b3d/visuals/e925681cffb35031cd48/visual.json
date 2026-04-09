@@ -17,23 +17,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "public olist_order_items_dataset"
-                        }
-                      },
-                      "Property": "price"
+                    "SourceRef": {
+                      "Entity": "Medidas"
                     }
                   },
-                  "Function": 0
+                  "Property": "Receita_Entregues"
                 }
               },
-              "queryRef": "Sum(public olist_order_items_dataset.price)",
-              "nativeQueryRef": "Soma de price",
-              "format": "\"R$\" #,0.###############;-\"R$\" #,0.###############;\"R$\" #,0.###############"
+              "queryRef": "Medidas.Receita_Entregues",
+              "nativeQueryRef": "Receita_Entregues"
             }
           ]
         }
@@ -42,18 +36,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "public olist_order_items_dataset"
-                      }
-                    },
-                    "Property": "price"
+                  "SourceRef": {
+                    "Entity": "Medidas"
                   }
                 },
-                "Function": 0
+                "Property": "Receita_Entregues"
               }
             },
             "direction": "Descending"
@@ -307,5 +296,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "75a8bf74d93cc489c267",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Receita_Entregues"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -3,10 +3,10 @@
   "name": "798cc3065fc551a6caea",
   "position": {
     "x": 103.46793349168645,
-    "y": 225.74821852731591,
+    "y": 189.97855846635261,
     "z": 1000,
-    "height": 109.45368171021377,
-    "width": 555.81947743467936,
+    "height": 141.94774346793349,
+    "width": 798.66983372921607,
     "tabOrder": 0
   },
   "visual": {
@@ -19,17 +19,17 @@
               {
                 "textRuns": [
                   {
-                    "value": "Dashboard ",
+                    "value": "Análise de Vendas e Performance ",
                     "textStyle": {
-                      "fontSize": "54pt",
+                      "fontSize": "36pt",
                       "color": "#ffffff"
                     }
                   },
                   {
-                    "value": "Olist",
+                    "value": "Olist Marketplace",
                     "textStyle": {
                       "fontFamily": "Segoe (Bold)",
-                      "fontSize": "54pt",
+                      "fontSize": "36pt",
                       "color": "#ffffff"
                     }
                   }

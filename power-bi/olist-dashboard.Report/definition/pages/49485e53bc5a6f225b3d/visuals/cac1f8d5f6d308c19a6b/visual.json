@@ -1,33 +1,44 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "d2323b92b3d22efd9047",
+  "name": "cac1f8d5f6d308c19a6b",
   "position": {
-    "x": 936.34204275534432,
+    "x": 248.83610451306413,
     "y": 230.02375296912112,
-    "z": 22000,
+    "z": 23001,
     "height": 230.02375296912112,
-    "width": 324.08551068883611,
-    "tabOrder": 21000
+    "width": 666.98337292161511,
+    "tabOrder": 22001
   },
   "visual": {
-    "visualType": "pieChart",
+    "visualType": "areaChart",
     "query": {
       "queryState": {
         "Category": {
           "projections": [
             {
               "field": {
-                "Column": {
+                "HierarchyLevel": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "tabela_estado_regiao"
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "public olist_orders_dataset"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "order_purchase_timestamp"
+                        }
+                      },
+                      "Hierarchy": "Hierarquia de datas"
                     }
                   },
-                  "Property": "Região"
+                  "Level": "Mês"
                 }
               },
-              "queryRef": "tabela_estado_regiao.Região",
-              "nativeQueryRef": "Região",
+              "queryRef": "public olist_orders_dataset.order_purchase_timestamp.Variation.Hierarquia de datas.Mês",
+              "nativeQueryRef": "order_purchase_timestamp Mês",
               "active": true
             }
           ]
@@ -36,48 +47,21 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "public olist_order_items_dataset"
-                        }
-                      },
-                      "Property": "price"
+                    "SourceRef": {
+                      "Entity": "Medidas"
                     }
                   },
-                  "Function": 0
+                  "Property": "Receita_Entregue_Com_Frete"
                 }
               },
-              "queryRef": "Sum(public olist_order_items_dataset.price)",
-              "nativeQueryRef": "Soma de price"
+              "queryRef": "Medidas.Receita_Entregue_Com_Frete",
+              "nativeQueryRef": "Receita de Pedidos + Frete - ",
+              "displayName": "Receita de Pedidos + Frete - "
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Aggregation": {
-                "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "public olist_order_items_dataset"
-                      }
-                    },
-                    "Property": "price"
-                  }
-                },
-                "Function": 0
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
       }
     },
     "objects": {
@@ -95,17 +79,6 @@
         }
       ],
       "dataPoint": [
-        {
-          "properties": {
-            "borderShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        },
         {
           "properties": {
             "fill": {
@@ -322,7 +295,163 @@
             "show": {
               "expr": {
                 "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Above'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000000D"
+                }
+              }
+            },
+            "switchAxisPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            },
+            "gridlineShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "titleFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "y2Axis": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "secStart": {
+              "expr": {
+                "Literal": {
+                  "Value": "3D"
+                }
+              }
+            },
+            "secLabelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "3L"
+                }
+              }
+            },
+            "secShowAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "secTitleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'dfsdfgdsg'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "seriesLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "zoom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -334,24 +463,17 @@
       "title": [
         {
           "properties": {
-            "text": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'Receita Pedidos X Região'"
+                  "Value": "true"
                 }
               }
             },
             "alignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'center'"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Verdana'"
+                  "Value": "'left'"
                 }
               }
             },
@@ -368,6 +490,101 @@
                   "Value": "false"
                 }
               }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Verdana'"
+                }
+              }
+            },
+            "heading": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Heading2'"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Receita Pedidos e Frete X Período'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
             }
           }
         }
@@ -382,6 +599,13 @@
                 }
               }
             },
+            "preset": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
             "color": {
               "solid": {
                 "color": {
@@ -393,31 +617,17 @@
                   }
                 }
               }
-            },
-            "preset": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Center'"
-                }
-              }
             }
           }
         }
       ],
-      "padding": [
+      "visualHeader": [
         {
           "properties": {
-            "top": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
-                }
-              }
-            },
-            "bottom": {
-              "expr": {
-                "Literal": {
-                  "Value": "5D"
+                  "Value": "true"
                 }
               }
             }
@@ -430,37 +640,43 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "b5c34485c604549fc52d",
+        "name": "53583045f8e7555bf4ec",
         "field": {
-          "Column": {
+          "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "tabela_estado_regiao"
+                "Entity": "Medidas"
               }
             },
-            "Property": "Região"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "403b49f7cf2a282a9249",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "public olist_order_items_dataset"
-                  }
-                },
-                "Property": "price"
-              }
-            },
-            "Function": 0
+            "Property": "Receita_Entregue_Com_Frete"
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "242de5ef587924782321",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "public olist_orders_dataset"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "order_purchase_timestamp"
+                  }
+                },
+                "Hierarchy": "Hierarquia de datas"
+              }
+            },
+            "Level": "Mês"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }
