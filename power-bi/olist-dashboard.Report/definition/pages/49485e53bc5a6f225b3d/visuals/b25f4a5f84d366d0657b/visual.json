@@ -4,10 +4,10 @@
   "position": {
     "x": 249.16666666666669,
     "y": 469.16666666666669,
-    "z": 20000,
+    "z": 23000,
     "height": 236.66666666666669,
     "width": 323.33333333333337,
-    "tabOrder": 19000
+    "tabOrder": 23000
   },
   "visual": {
     "visualType": "ribbonChart",
@@ -161,6 +161,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
@@ -182,6 +189,92 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_19a18b12-987b-428c-a0b2-293e66007d55"
+                          }
+                        },
+                        "Property": "Ano"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "2017L"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "LocalDateTable_19a18b12-987b-428c-a0b2-293e66007d55"
+                          }
+                        },
+                        "Property": "Ano"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "2018L"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       ]
@@ -282,5 +375,53 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4d321ace96846bcf052b",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "public olist_orders_dataset"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "order_purchase_timestamp"
+                  }
+                },
+                "Hierarchy": "Hierarquia de datas"
+              }
+            },
+            "Level": "Ano"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7fddffd549235e20519e",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "public olist_customers_dataset"
+                  }
+                },
+                "Property": "customer_unique_id"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

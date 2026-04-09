@@ -4,13 +4,13 @@
   "position": {
     "x": 248.83610451306413,
     "y": 230.02375296912112,
-    "z": 23001,
+    "z": 27000,
     "height": 230.02375296912112,
     "width": 666.98337292161511,
-    "tabOrder": 22001
+    "tabOrder": 27000
   },
   "visual": {
-    "visualType": "areaChart",
+    "visualType": "stackedAreaChart",
     "query": {
       "queryState": {
         "Category": {
@@ -287,6 +287,25 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Receita_Entregue_Com_Frete"
+          }
         }
       ],
       "labels": [
@@ -457,6 +476,72 @@
             }
           }
         }
+      ],
+      "lineStyles": [
+        {
+          "properties": {
+            "areaShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "strokeShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "lineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'solid'"
+                }
+              }
+            },
+            "lineChartType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'linear'"
+                }
+              }
+            },
+            "areaMatchStrokeColor": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "areaColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "totals": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -585,6 +670,25 @@
                   "Value": "1D"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -636,48 +740,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "53583045f8e7555bf4ec",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Receita_Entregue_Com_Frete"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "242de5ef587924782321",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "public olist_orders_dataset"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "order_purchase_timestamp"
-                  }
-                },
-                "Hierarchy": "Hierarquia de datas"
-              }
-            },
-            "Level": "Mês"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

@@ -38,6 +38,10 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure Total_Pedidos = COUNTROWS('public olist_orders_dataset')
+		formatString: 0
+		lineageTag: d4b20f3f-fed5-4bf8-824d-4dc7ec8b9c19
+
 	partition Medidas = m
 		mode: import
 		source =

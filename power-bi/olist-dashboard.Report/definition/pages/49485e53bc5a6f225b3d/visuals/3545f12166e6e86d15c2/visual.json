@@ -4,10 +4,10 @@
   "position": {
     "x": 592.58907363420428,
     "y": 470.30878859857478,
-    "z": 21000,
+    "z": 24000,
     "height": 236.00950118764845,
     "width": 323.230403800475,
-    "tabOrder": 20000
+    "tabOrder": 24000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -154,6 +154,24 @@
             }
           }
         }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -292,42 +310,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e10fbda5f7cbbe082acc",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "public olist_products_dataset"
-              }
-            },
-            "Property": "product_category_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "672f47de48c3e49ac7b8",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "public olist_order_items_dataset"
-                  }
-                },
-                "Property": "price"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

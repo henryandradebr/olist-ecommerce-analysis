@@ -25,3 +25,23 @@ relationship AutoDetected_7892e105-0cb5-47fd-98aa-5ba1b259ec51
 	fromColumn: olist_order_payments_dataset.order_id
 	toColumn: 'public olist_orders_dataset'.order_id
 
+relationship fd5da1b1-6f44-448b-93cf-85a228b78c2f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'public olist_orders_dataset'.order_estimated_delivery_date
+	toColumn: LocalDateTable_125d4b1d-f712-44da-8d1e-d23dec9f5f97.Date
+
+relationship 5d22b53d-fc48-4468-b2d1-9aef7a74d9c8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'public olist_orders_dataset'.order_approved_at
+	toColumn: LocalDateTable_0f2d70c1-5c1a-4a12-8239-f06fc2016a92.Date
+
+relationship f776f0d8-745b-4a81-90a4-65b08483321e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'public olist_orders_dataset'.order_delivered_carrier_date
+	toColumn: LocalDateTable_f578aa5b-7996-4cf6-ac6f-76ce86de2957.Date
+
+relationship 826490fb-6dc6-4562-ac2c-c1bdfb75bf68
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'public olist_orders_dataset'.order_delivered_customer_date
+	toColumn: LocalDateTable_1ffeb2fa-a63e-4520-917b-8dbf15deae47.Date
+

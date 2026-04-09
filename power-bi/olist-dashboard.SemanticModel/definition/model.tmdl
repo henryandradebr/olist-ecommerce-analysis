@@ -21,6 +21,10 @@ ref table DateTableTemplate_5752ad23-9a2e-4f5c-9064-9ec61c8b001e
 ref table LocalDateTable_19a18b12-987b-428c-a0b2-293e66007d55
 ref table tabela_estado_regiao
 ref table olist_order_payments_dataset
+ref table LocalDateTable_125d4b1d-f712-44da-8d1e-d23dec9f5f97
+ref table LocalDateTable_0f2d70c1-5c1a-4a12-8239-f06fc2016a92
+ref table LocalDateTable_f578aa5b-7996-4cf6-ac6f-76ce86de2957
+ref table LocalDateTable_1ffeb2fa-a63e-4520-917b-8dbf15deae47
 
 ref cultureInfo pt-BR
 

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "d9035259c78fe46d704c",
+  "displayName": "Análise KPIs",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "pageBinding": {
+    "name": "654c2e14ecc079e7079e",
+    "type": "Default",
+    "parameters": []
+  }
+}

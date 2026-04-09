@@ -63,6 +63,11 @@
       "type": "RegisteredResources",
       "items": [
         {
+          "name": "analise-geral-blue25758140564483345.png",
+          "path": "analise-geral-blue25758140564483345.png",
+          "type": "Image"
+        },
+        {
           "name": "analise-geral-blue33162889135451823.png",
           "path": "analise-geral-blue33162889135451823.png",
           "type": "Image"
@@ -88,8 +93,13 @@
           "type": "Image"
         },
         {
-          "name": "analise-kpis-blue12001618625377208.png",
-          "path": "analise-kpis-blue12001618625377208.png",
+          "name": "analise-kpis-blue37182440145209594.png",
+          "path": "analise-kpis-blue37182440145209594.png",
+          "type": "Image"
+        },
+        {
+          "name": "analise-kpis-blue46045083604893744.png",
+          "path": "analise-kpis-blue46045083604893744.png",
           "type": "Image"
         },
         {
@@ -113,13 +123,13 @@
           "type": "Image"
         },
         {
-          "name": "analise-pedidos-light-blue32561229128807656.png",
-          "path": "analise-pedidos-light-blue32561229128807656.png",
+          "name": "analise-pedidos-light-blue23090551337304743.png",
+          "path": "analise-pedidos-light-blue23090551337304743.png",
           "type": "Image"
         },
         {
-          "name": "analise-pedidos-light-blue7710954037305561.png",
-          "path": "analise-pedidos-light-blue7710954037305561.png",
+          "name": "analise-pedidos-light-blue32561229128807656.png",
+          "path": "analise-pedidos-light-blue32561229128807656.png",
           "type": "Image"
         },
         {
@@ -138,8 +148,23 @@
           "type": "Image"
         },
         {
+          "name": "discount5551141618076947.png",
+          "path": "discount5551141618076947.png",
+          "type": "Image"
+        },
+        {
+          "name": "order4429753091187866.png",
+          "path": "order4429753091187866.png",
+          "type": "Image"
+        },
+        {
           "name": "receitat-blue16615073204405661.png",
           "path": "receitat-blue16615073204405661.png",
+          "type": "Image"
+        },
+        {
+          "name": "rejected-package40350673599205067.png",
+          "path": "rejected-package40350673599205067.png",
           "type": "Image"
         },
         {

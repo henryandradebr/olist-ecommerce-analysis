@@ -4,10 +4,10 @@
   "position": {
     "x": 985.93824244739039,
     "y": 17.246151842674518,
-    "z": 19000,
+    "z": 22000,
     "height": 99.166666666666671,
     "width": 276.66666666666669,
-    "tabOrder": 18000
+    "tabOrder": 22000
   },
   "visual": {
     "visualType": "slicer",
@@ -210,35 +210,11 @@
         }
       ]
     },
+    "syncGroup": {
+      "groupName": "Ano",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "3ac28febd10e22f807e5",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "public olist_orders_dataset"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "order_purchase_timestamp"
-                  }
-                },
-                "Hierarchy": "Hierarquia de datas"
-              }
-            },
-            "Level": "Ano"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

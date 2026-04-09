@@ -4,10 +4,10 @@
   "position": {
     "x": 936.34204275534432,
     "y": 469.45368171021374,
-    "z": 23002,
+    "z": 28000,
     "height": 236.86460807600949,
     "width": 324.08551068883611,
-    "tabOrder": 22002
+    "tabOrder": 28000
   },
   "visual": {
     "visualType": "donutChart",
@@ -494,42 +494,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "7256a7ab7f7822af00df",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "olist_order_payments_dataset"
-                  }
-                },
-                "Property": "payment_value"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "17f9393c53fb54c5f350",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "tabela_estado_regiao"
-              }
-            },
-            "Property": "Região"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

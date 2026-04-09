@@ -4,10 +4,10 @@
   "position": {
     "x": 936.34204275534432,
     "y": 230.02375296912112,
-    "z": 22000,
+    "z": 25000,
     "height": 230.02375296912112,
     "width": 324.08551068883611,
-    "tabOrder": 21000
+    "tabOrder": 25000
   },
   "visual": {
     "visualType": "pieChart",
@@ -426,42 +426,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "b5c34485c604549fc52d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "tabela_estado_regiao"
-              }
-            },
-            "Property": "Região"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "403b49f7cf2a282a9249",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "public olist_order_items_dataset"
-                  }
-                },
-                "Property": "price"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

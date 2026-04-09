@@ -46,34 +46,77 @@ table 'public olist_orders_dataset'
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column order_approved_at
-		dataType: string
+		dataType: dateTime
+		formatString: General Date
 		lineageTag: fba56647-5fb4-438c-b531-a8bf0b222f98
 		summarizeBy: none
 		sourceColumn: order_approved_at
 
+		variation Variation
+			isDefault
+			relationship: 5d22b53d-fc48-4468-b2d1-9aef7a74d9c8
+			defaultHierarchy: LocalDateTable_0f2d70c1-5c1a-4a12-8239-f06fc2016a92.'Hierarquia de datas'
+
 		annotation SummarizationSetBy = Automatic
 
 	column order_delivered_carrier_date
-		dataType: string
+		dataType: dateTime
+		formatString: General Date
 		lineageTag: 83337fb2-f943-43a9-aed8-4cbbadbbdbeb
 		summarizeBy: none
 		sourceColumn: order_delivered_carrier_date
 
+		variation Variation
+			isDefault
+			relationship: f776f0d8-745b-4a81-90a4-65b08483321e
+			defaultHierarchy: LocalDateTable_f578aa5b-7996-4cf6-ac6f-76ce86de2957.'Hierarquia de datas'
+
 		annotation SummarizationSetBy = Automatic
 
 	column order_delivered_customer_date
-		dataType: string
+		dataType: dateTime
+		formatString: General Date
 		lineageTag: d24d9fc9-7c78-47b2-a151-34a62e0000bb
 		summarizeBy: none
 		sourceColumn: order_delivered_customer_date
 
+		variation Variation
+			isDefault
+			relationship: 826490fb-6dc6-4562-ac2c-c1bdfb75bf68
+			defaultHierarchy: LocalDateTable_1ffeb2fa-a63e-4520-917b-8dbf15deae47.'Hierarquia de datas'
+
 		annotation SummarizationSetBy = Automatic
 
 	column order_estimated_delivery_date
-		dataType: string
+		dataType: dateTime
+		formatString: General Date
 		lineageTag: d19068f9-c6cd-4e5b-aebe-091865bd6062
 		summarizeBy: none
 		sourceColumn: order_estimated_delivery_date
+
+		variation Variation
+			isDefault
+			relationship: fd5da1b1-6f44-448b-93cf-85a228b78c2f
+			defaultHierarchy: LocalDateTable_125d4b1d-f712-44da-8d1e-d23dec9f5f97.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Entrega' =
+			
+			VAR Entrega = 'public olist_orders_dataset'[order_delivered_customer_date]
+			VAR Estimada = 'public olist_orders_dataset'[order_estimated_delivery_date]
+			RETURN
+			IF(
+			    ISBLANK(Entrega),
+			    BLANK(),
+			    IF(
+			        Entrega < Estimada,
+			        "No Prazo",
+			        "Fora do Prazo"
+			    )
+			)
+		lineageTag: cdf4edce-574d-4112-b670-d4ebb3124f0e
+		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
@@ -82,9 +125,10 @@ table 'public olist_orders_dataset'
 		source =
 				let
 				    Fonte = PostgreSQL.Database("localhost:5432", "olist"),
-				    public_olist_orders_dataset = Fonte{[Schema="public",Item="olist_orders_dataset"]}[Data]
+				    public_olist_orders_dataset = Fonte{[Schema="public",Item="olist_orders_dataset"]}[Data],
+				    #"Tipo Alterado" = Table.TransformColumnTypes(public_olist_orders_dataset,{{"order_delivered_customer_date", type datetime}, {"order_estimated_delivery_date", type datetime}, {"order_delivered_carrier_date", type datetime}, {"order_approved_at", type datetime}, {"order_purchase_timestamp", type datetime}})
 				in
-				    public_olist_orders_dataset
+				    #"Tipo Alterado"
 
 	annotation PBI_NavigationStepName = Navegação
 

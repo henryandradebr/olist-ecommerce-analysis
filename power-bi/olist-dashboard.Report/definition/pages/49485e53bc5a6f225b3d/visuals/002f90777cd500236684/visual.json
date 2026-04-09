@@ -4,10 +4,10 @@
   "position": {
     "x": 794.15083152102466,
     "y": 16.891836719950842,
-    "z": 18000,
+    "z": 21000,
     "height": 72.684085510688831,
     "width": 180.42755344418052,
-    "tabOrder": 17000
+    "tabOrder": 21000
   },
   "visual": {
     "visualType": "slicer",
@@ -149,6 +149,11 @@
           }
         }
       ]
+    },
+    "syncGroup": {
+      "groupName": "customer_state",
+      "fieldChanges": true,
+      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   }
